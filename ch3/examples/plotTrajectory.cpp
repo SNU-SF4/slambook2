@@ -2,13 +2,11 @@
 #include <Eigen/Core>
 #include <unistd.h>
 
-// 本例演示了如何画出一个预先存储的轨迹
-
 using namespace std;
 using namespace Eigen;
 
 // path to trajectory file
-string trajectory_file = "./examples/trajectory.txt";
+string trajectory_file = "../trajectory.txt";
 
 void DrawTrajectory(vector<Isometry3d, Eigen::aligned_allocator<Isometry3d>>);
 
@@ -58,7 +56,7 @@ void DrawTrajectory(vector<Isometry3d, Eigen::aligned_allocator<Isometry3d>> pos
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glLineWidth(2);
     for (size_t i = 0; i < poses.size(); i++) {
-      // 画每个位姿的三个坐标轴
+      // draw three axes of each pose
       Vector3d Ow = poses[i].translation();
       Vector3d Xw = poses[i] * (0.1 * Vector3d(1, 0, 0));
       Vector3d Yw = poses[i] * (0.1 * Vector3d(0, 1, 0));
@@ -75,7 +73,7 @@ void DrawTrajectory(vector<Isometry3d, Eigen::aligned_allocator<Isometry3d>> pos
       glVertex3d(Zw[0], Zw[1], Zw[2]);
       glEnd();
     }
-    // 画出连线
+    // draw a connection
     for (size_t i = 0; i < poses.size(); i++) {
       glColor3f(0.0, 0.0, 0.0);
       glBegin(GL_LINES);
