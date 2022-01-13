@@ -1,6 +1,15 @@
 ## Slambook2
 ![titlepage](./figures/title.png)
 
+### Run with docker
+
+Pull image & run
+
+```bash
+docker pull bodcoder2/slam14:latest
+docker run -i -t bodcoder2/slam14 /bin/zsh
+```
+
 Welcome to Slambook 2nd Edition! This is the codebase of our book. Here are some relavant links if you need them: 
 - [Our book at jd.com](https://item.jd.com/12666058.html)
 - [Our book at douban.com](https://book.douban.com/subject/27028215/) (I'll be happy to get a score at douban)
